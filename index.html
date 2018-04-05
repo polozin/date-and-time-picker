@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/datetimepicker.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/moment-with-locales.js"></script>
+    <script type="text/javascript" src="js/datetimepicker.js"></script>
+    <style>
+        body{ background-color: beige; direction: ltr;}
+    </style>
+    <script type="text/javascript">
+    $(document).ready( function () {
+        $('#picker').dateTimePicker();
+        $('#picker-no-time').dateTimePicker({ showTime: false, dateFormat: 'DD/MM/YYYY'});
+    })
+    </script>
+    <title>Date Time Picker</title>
+</head>
+<body>
+<div style="width: 250px; margin: 50px auto;">
+    <div id="picker" </div>
+    <input type="hidden" id="result" value="" />
+</div>
+<div style="width: 250px; margin: 50px auto;">
+    <div id="picker-no-time"></div>
+    <input type="hidden" id="result2" value="" />
+</div>
+</body>
+</html>
