@@ -9,7 +9,8 @@
             locale: 'en',
             positionShift: { top: 20, left: 0},
             title: "Select Date and Time",
-            buttonTitle: "Select"
+            buttonTitle: "Select",
+            allowBackwards: false
         }, options);
         moment.locale(settings.locale);
         var elem = this;
@@ -107,7 +108,12 @@
                                 var day = parseInt(m.format('D'));
                                 $b.text(day);
                                 if (flagStart && day < dayNow) {
-                                    $b.addClass('dtp_modal-grey');
+                                    if (! (settings.allowBackwards)) {
+                                        $b.addClass('dtp_modal-grey');
+                                    } else {
+                                        $b.addClass('cursorily');
+                                        $b.bind('click', changeDate);
+                                    }
                                 }
                                 else if (flagSelect && day == cerDay) {
                                     $b.addClass('dtp_modal-cell-selected');
@@ -177,7 +183,7 @@
                 }
 
                 function prevMonth() {
-                    if (totalMonths(selectDate) > totalMonths(startDate)) {
+                    if (totalMonths(selectDate) > totalMonths(startDate) || settings.allowBackwards == true) {
                         selectDate.add(-1, 'month');
                         feelDates(selectDate);
                     }
