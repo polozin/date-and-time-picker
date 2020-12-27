@@ -13,14 +13,14 @@
     <script type="text/javascript">
     $(document).ready( function () {
         $('#picker').dateTimePicker();
-        $('#picker-no-time').dateTimePicker({ showTime: false, dateFormat: 'DD/MM/YYYY'});
+        $('#picker-no-time').dateTimePicker({ showTime: false, dateFormat: 'DD/MM/YYYY', title: 'Select Date'});
     })
     </script>
     <title>Date Time Picker</title>
 </head>
 <body>
 <div style="width: 250px; margin: 50px auto;">
-    <div id="picker" </div>
+    <div id="picker"></div>
     <input type="hidden" id="result" value="" />
 </div>
 <div style="width: 250px; margin: 50px auto;">
